@@ -1,11 +1,11 @@
 ## Welcome to the Best Dressed Repo
 
-* 1. bower install
-* 2. npm install
-* 3. create an account and login
-* 4. profit
+1. bower install
+2. npm install
+3. create an account and login
+4. profit
 
-- *Current Features*  
+### Current Features
 - Authentication, Scraping (pinterest) -> save + updates view
 - Upload images, show All Looks & User Looks
 - UI grid, page for Look details, Gravatar
@@ -19,13 +19,13 @@
 - Infinite Scroll  (loading 6)
 
 #### Front Page
-![Screenshot1](client/assets/imgages/screens/home.png)
+![Screenshot1](client/assets/images/screens/home.png)
 
 #### Look page
-![Screenshot2](client/assets/imgages/screens/look.png)
+![Screenshot2](client/assets/images/screens/look.png)
 
 ### Admin page
-![Screenshot3](client/assets/imgages/screens/admin.png)
+![Screenshot3](client/assets/images/screens/admin.png)
 
 ### My Looks page
-![Screenshot4](client/assets/imgages/screens/mylook.png)
+![Screenshot4](client/assets/images/screens/mylook.png)
