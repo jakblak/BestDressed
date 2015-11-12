@@ -1,5 +1,3 @@
-<!-- <div ng-include="'app/components/navbar/navbar.html'"></div>
- -->
 <div class="center-block" style="border: 2px solid #083858; border-radius: 8px; width: 450px; padding: 0 10px 20px 20px;">
   <h1 class="text-center" style="color: #083858;">Sign Up</h1>
 
@@ -38,7 +36,7 @@
                                           'has-error': form.password.$invalid && submitted }">
         <label style="color: #083858;">Password</label><br/>
 
-        <input type="password" name="password" placeholder="Enter password" class="form-control" ng-model="user.password"
+        <input type="password" name="password" placeholder="Enter passwordi" class="form-control" ng-model="user.password"
                ng-minlength="3"
                required
                mongoose-error/>
@@ -52,10 +50,10 @@
       </div>
 
       <div>
-        <button class="btn btn-info btn-lg btn-login" type="submit">
+        <button class="btn btn-primary btn-lg btn-login" type="submit">
           Sign up
         </button>
-        <a class="btn btn-default btn-lg btn-register" ui-sref="login">
+        <a class="btn btn-default btn-lg btn-register" href="/login">
           Login
         </a>
       </div>

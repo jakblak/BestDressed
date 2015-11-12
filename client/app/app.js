@@ -11,17 +11,15 @@
       'ngFileUpload',
       'angularGrid',
       'angularMoment',
-      'mgcrea.ngStrap',
-      'infinite-scroll'
+      'mgcrea.ngStrap'
     ])
     .config(config)
     .run(run)
-    .value('THROTTLE_MILLISECONDS', 1000)
     .factory('authInterceptor', authInterceptor);
 
   config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
-  run.$inject = ['$rootScope', '$state', 'Auth'];
-  authInterceptor.$inject = ['$rootScope', '$q', '$cookieStore', '$location'];
+  run.$inject = ['$rootScope', '$location', 'Auth'];
+  authInterceptor.$inject = ['$rootScope', '$q', '$cookieStore', '$location']
 
   function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
@@ -29,14 +27,24 @@
     $httpProvider.interceptors.push('authInterceptor');
   }
 
-  function authInterceptor($rootScope, $q, $cookies, $injector) {
-    var state;
+  function run($rootScope, $location, Auth) {
+    // Redirect to login if route requires auth and you're not logged in
+    $rootScope.$on('$stateChangeStart', function(event, next) {
+      Auth.isLoggedInAsync(function(loggedIn) {
+        if (next.authenticate && !loggedIn) {
+          $location.path('/login');
+        }
+      });
+    });
+  }
+
+  function authInterceptor($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
       request: function(config) {
         config.headers = config.headers || {};
-        if ($cookies.get('token')) {
-          config.headers.Authorization = 'Bearer ' + $cookies.get('token');
+        if ($cookieStore.get('token')) {
+          config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
         }
         return config;
       },
@@ -44,29 +52,15 @@
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if (response.status === 401) {
-          (state || (state = $injector.get('$state'))).go('login');
+          $location.path('/login');
           // remove any stale tokens
-          $cookies.remove('token');
+          $cookieStore.remove('token');
           return $q.reject(response);
         } else {
           return $q.reject(response);
         }
       }
     };
-  }
-
-  function run($rootScope, $state, Auth) {
-    // Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on('$stateChangeStart', function(event, next) {
-      if (next.authenticate) {
-        Auth.isLoggedIn(function(loggedIn) {
-          if (!loggedIn) {
-            event.preventDefault();
-            $state.go('login');
-          }
-        });
-      }
-    });
   }
 
 })();
