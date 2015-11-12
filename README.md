@@ -6,6 +6,7 @@
 4. profit
 
 *[Kickstarter Page](https://www.kickstarter.com/projects/shockwavelabs/mastering-the-mean-stack-learn-by-example)*
+
 *[Video Overview](https://youtu.be/ytvAoPVu_mY)*
 
 ### Current Features
