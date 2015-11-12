@@ -5,6 +5,9 @@
 3. create an account and login
 4. profit
 
+[Kickstarter Page](https://www.kickstarter.com/projects/shockwavelabs/mastering-the-mean-stack-learn-by-example)
+[Video Overview](https://youtu.be/ytvAoPVu_mY)
+
 ### Current Features
 - Authentication, Scraping (pinterest) -> save + updates view
 - Upload images, show All Looks & User Looks
@@ -28,4 +31,4 @@
 ![Screenshot3](client/assets/images/screens/admin.png)
 
 ### My Looks page
-![Screenshot4](client/assets/images/screens/mylook.png)
+![Screenshot4](client/assets/images/screens/mylooks.png)
