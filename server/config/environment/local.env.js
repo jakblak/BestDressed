@@ -16,9 +16,9 @@ module.exports = {
   TWITTER_SECRET:   'secret',
 
   keys:{
-    access: 'AKIAINZITVNGQBZ7GPHA',
-    secret: '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',
-    bucket: 'vini-snapit',
+    access: '',
+    secret: '',
+    bucket: 'vini',
     region: 'us-west-2'
   },
   // Control debug level for modules using visionmedia/debug
