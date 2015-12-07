@@ -5,9 +5,9 @@
 3. create an account and login
 4. profit
 
-*[Kickstarter Page](https://www.kickstarter.com/projects/shockwavelabs/mastering-the-mean-stack-learn-by-example)*
+*[Kickstarter Page](https://www.kickstarter.com/projects/shockwavelabs/learn-the-mean-stack)*
 
-*[Video Overview](https://youtu.be/ytvAoPVu_mY)*
+*[Video Overview](https://youtu.be/8QxrNdleACc)*
 
 ### Current Features
 - Authentication, Scraping (pinterest) -> save + updates view
